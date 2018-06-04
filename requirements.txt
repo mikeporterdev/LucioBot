@@ -1,1 +1,7 @@
-discord.py==0.16.12
+discord.py
+SQLAlchemy==1.2.8
+aiohttp
+websockets
+PyNaCl
+asyncio
+typing
