@@ -3,5 +3,3 @@ SQLAlchemy==1.2.8
 aiohttp
 websockets
 PyNaCl
-asyncio
-typing
