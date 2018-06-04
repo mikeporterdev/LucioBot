@@ -1,4 +1,3 @@
-#!venv/bin/python3.6
 import os
 
 from discord.ext.commands import Bot
