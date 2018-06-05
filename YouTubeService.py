@@ -14,8 +14,6 @@ youtube_options = {
     }]
 }
 
-video = 'https://www.youtube.com/watch?v=dQw4w9WgXcQ'
-
 
 class YouTubeService:
     def __init__(self):
