@@ -20,7 +20,6 @@ async def on_ready():
 
 @client.command()
 async def play(url):
-    YT_LINK = 'https://www.youtube.com/watch?v=dQw4w9WgXcQ'
     voice_channel_list = []
     for server in client.servers:
         for channel in server.channels:
@@ -36,6 +35,4 @@ async def play(url):
     # player.volume = 0.05
     # player.start()
 
-
-YouTubeService()
 client.run(os.environ.get('DISCORD_KEY'))
