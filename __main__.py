@@ -1,8 +1,9 @@
 import os
 
+from discord import ChannelType
 from discord.ext.commands import Bot
 
-BOT_PREFIX = ("Lucio ", "lucio ")
+BOT_PREFIX = ("Lucio ", "l")
 
 client = Bot(command_prefix=BOT_PREFIX)
 
@@ -16,9 +17,26 @@ async def on_ready():
 
 
 @client.command()
-async def squaretest2(number):
-    squared_value = int(number) * int(number)
-    await client.say(str(number) + " squared is " + str(squared_value))
+async def play():
+    YT_LINK = 'https://www.youtube.com/watch?v=dQw4w9WgXcQ'
+    voice_channel_list = []
+    for server in client.servers:
+        for channel in server.channels:
+            if channel.type is ChannelType.voice:
+                voice_channel_list.append(channel)
+
+    channel = voice_channel_list[0]
+
+    channel_join = await client.join_voice_channel(channel)
+    player = await channel_join.create_ytdl_player(YT_LINK)
+    player.volume = 0.05
+    player.start()
+
+
+def getVoiceChannels(channels):
+    a = []
+    for i in channels:
+        print(i)
 
 
 client.run(os.environ.get('DISCORD_KEY'))
