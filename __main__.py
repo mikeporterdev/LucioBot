@@ -35,4 +35,9 @@ async def play(url):
     # player.volume = 0.05
     # player.start()
 
+@client.command(pass_context=True)
+async def join(context, *args):
+	channel = context.message.author.voice_channel
+	await client.join_voice_channel(channel)
+
 client.run(os.environ.get('DISCORD_KEY'))
